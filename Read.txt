@@ -1,0 +1,34 @@
+Marks Management System
+Overview
+The Marks Management System is a Django-based application that allows users to manage student data and their marks. The system reads data from a CSV file and provides functionality to add students and their marks.
+
+Modules
+1. index(request)
+This function renders the index page of the application.
+
+2. student_list(request)
+This function reads data from a CSV file for the student list and renders the 'student_list.html' page with the student list data.
+
+3. add_student(request)
+This function handles the addition of a new student. If the request method is POST and the form is valid, it saves the form data and redirects to the student list. Otherwise, it renders the 'add_student.html' page with the form and student data read from a CSV file.
+
+4. read_csv_student_data(file_path)
+This function reads student data from a CSV file. It assumes the CSV file has columns 'First Name', 'Last Name', 'Roll Number', 'Subjects', 'Marks', etc. It returns a list of dictionaries where each dictionary represents a student.
+
+5. read_csv_student_list(file_path)
+This function reads student list data from a CSV file. It assumes the CSV file has columns 'First Name', 'Last Name', 'Roll Number', 'Subjects', 'Marks', etc. It returns a list of dictionaries where each dictionary represents a student.
+
+6. marks_list(request)
+This function handles the listing of marks. If the request method is POST and the form is valid, it saves the form data and redirects to the marks list. Otherwise, it renders the 'marks_list.html' page with the marks, form, and chart data read from a CSV file.
+
+7. read_csv_data(file_path)
+This function reads data from a CSV file for charting. It assumes the CSV file has columns 'First Name', 'Subjects', 'Marks'. It returns a dictionary with labels and data for charting.
+
+Forms
+The system uses two forms: StudentForm and MarkForm. These forms are used to handle the addition of new students and their marks.
+
+Models
+The system uses two models: Student and Mark. These models represent the student and their marks in the database.
+
+CSV File Structure
+The system assumes the CSV file has columns 'First Name', 'Last Name', 'Roll Number', 'Subjects', 'Marks'. The 'Subjects' and 'Marks' are comma-separated strings.
